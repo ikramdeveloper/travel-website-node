@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Admin Page</title>
+  </head>
+  <body>
+    <header class="mb-3">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand h6 mb-0" href="/">Let's Travel</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/admin"
+                  >Admin</a
+                >
+              </li>
+            </ul>
+            <button class="logout-btn btn btn-outline-secondary">
+              Log Out
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container shadow p-3 mb-5 bg-body rounded">
+        <h1 class="text-center">Admin Page</h1>
+        <hr />
+        <div class="d-flex align-items-start">
+          <div
+            class="nav flex-column nav-pills me-3 border rounded w-25 p-3"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <button
+              class="nav-link active"
+              id="v-pills-posts-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-posts"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-posts"
+              aria-selected="true"
+            >
+              Posts
+            </button>
+            <button
+              class="nav-link"
+              id="v-pills-mails-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-mails"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-mails"
+              aria-selected="false"
+            >
+              Mails
+            </button>
+            <button
+              class="nav-link"
+              id="v-pills-requests-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-requests"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-requests"
+              aria-selected="false"
+            >
+              Callback Requests
+            </button>
+            <button
+              class="nav-link d-none"
+              id="v-pills-add-post-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-add-post"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-add-post"
+              aria-selected="false"
+            >
+              Create Post
+            </button>
+            <button
+              class="nav-link d-none"
+              id="v-pills-update-post-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-update-post"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-update-post"
+              aria-selected="false"
+            >
+              Update Post
+            </button>
+          </div>
+          <div
+            class="tab-content border rounded w-75 p-3"
+            id="v-pills-tabContent"
+          >
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-posts"
+              role="tabpanel"
+              aria-labelledby="v-pills-posts-tab"
+            >
+              <button class="btn btn-primary mb-3 add-post">Add Post</button>
+              <table class="posts-list table table-striped">
+                <tbody></tbody>
+              </table>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-mails"
+              role="tabpanel"
+              aria-labelledby="v-pills-mails-tab"
+            >
+              <table class="table table-striped">
+                <tbody></tbody>
+              </table>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-requests"
+              role="tabpanel"
+              aria-labelledby="v-pills-requests-tab"
+            >
+              <table class="table table-striped">
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <!-- Create Post Form -->
+            <div
+              class="tab-pane fade"
+              id="v-pills-add-post"
+              role="tabpanel"
+              aria-labelledby="v-pills-add-post-tab"
+            >
+              <h1>Create Post</h1>
+              <form class="create-post-form">
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input
+                    type="text"
+                    id="title"
+                    class="form-control"
+                    placeholder="Title"
+                    value="Sydney Opera House"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="country" class="form-label">Country</label>
+                  <input
+                    type="text"
+                    id="country"
+                    class="form-control"
+                    placeholder="Country"
+                    value="Australia"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="imageUrl" class="form-label">Image URL</label>
+                  <input
+                    type="url"
+                    id="imageUrl"
+                    class="form-control"
+                    placeholder="Image URL"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="imageFile" class="form-label">or</label>
+                  <input type="file" id="imageFile" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="text" class="form-label mb-1">Text</label>
+                  <textarea
+                    id="text"
+                    cols="30"
+                    rows="5"
+                    class="form-control"
+                    placeholder="Write info about post..."
+                  >
+                  The Sydney Opera House is a multi-venue performing arts centre in Sydney. Located on the banks of the Sydney Harbour, it is often regarded as one of the world's most famous and distinctive buildings and a masterpiece of 20th century architecture.[3][4]
+
+Designed by Danish architect Jørn Utzon, but completed by an Australian architectural team headed by Peter Hall, the building was formally opened on 20 October 1973[5] after a gestation beginning with Utzon's 1957 selection as winner of an international design competition. The Government of New South Wales, led by the premier, Joseph Cahill, authorised work to begin in 1958 with Utzon directing construction. The government's decision to build Utzon's design is often overshadowed by circumstances that followed, including cost and scheduling overruns as well as the architect's ultimate resignation.[6]
+                </textarea
+                  >
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Create Post
+                </button>
+              </form>
+            </div>
+
+            <!-- Update Post Form -->
+            <div
+              class="tab-pane fade"
+              id="v-pills-update-post"
+              role="tabpanel"
+              aria-labelledby="v-pills-update-post-tab"
+            >
+              <h1>Update Post</h1>
+              <form class="update-post-form">
+                <div class="mb-3">
+                  <label for="updateTitle" class="form-label">Title</label>
+                  <input
+                    type="text"
+                    id="updateTitle"
+                    class="form-control"
+                    placeholder="Title"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="updateText" class="form-label mb-1">Text</label>
+                  <textarea
+                    id="updateText"
+                    cols="30"
+                    rows="5"
+                    class="form-control"
+                    placeholder="Write info about post..."
+                  >
+                  </textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Update Post
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- script -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/admin/js/create-post.js"></script>
+    <script src="/admin/js/delete-post.js"></script>
+    <script src="/admin/js/update-post.js"></script>
+    <script src="/admin/js/delete-request.js"></script>
+    <script src="/admin/js/delete-email.js"></script>
+    <script src="/admin/js/main.js"></script>
+  </body>
+</html>
