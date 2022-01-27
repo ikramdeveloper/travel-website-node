@@ -6,7 +6,7 @@
       const id = e.target.parentNode.parentNode.querySelector(".id").value;
       try {
         await (
-          await fetch(`http://localhost:3000/posts/${id}`, {
+          await fetch(`/posts/${id}`, {
             method: "DELETE",
           })
         ).text();

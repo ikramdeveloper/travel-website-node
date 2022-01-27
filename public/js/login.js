@@ -6,7 +6,7 @@ loginForm.addEventListener("submit", (e) => {
   const email = loginForm.loginEmail.value;
   const password = loginForm.loginPassword.value;
 
-  fetch("http://localhost:3000/users/login", {
+  fetch("/users/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -33,7 +33,7 @@ registerForm.addEventListener("submit", (e) => {
 
   if (password !== rePassword) return;
 
-  fetch("http://localhost:3000/users/register", {
+  fetch("/users/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

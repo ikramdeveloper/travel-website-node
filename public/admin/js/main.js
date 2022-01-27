@@ -17,15 +17,15 @@ const initApp = async () => {
 };
 
 const getPosts = async () => {
-  return await (await fetch("http://localhost:3000/posts")).json();
+  return await (await fetch("/posts")).json();
 };
 
 const getCallRequests = async () => {
-  return await (await fetch("http://localhost:3000/call-requests")).json();
+  return await (await fetch("/call-requests")).json();
 };
 
 const getEmails = async () => {
-  return await (await fetch("http://localhost:3000/emails")).json();
+  return await (await fetch("/emails")).json();
 };
 
 const postsDOM = (posts) => {

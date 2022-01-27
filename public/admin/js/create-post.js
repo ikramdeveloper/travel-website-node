@@ -27,7 +27,7 @@ createPostForm.addEventListener("submit", async (e) => {
 
   try {
     const result = await (
-      await fetch("http://localhost:3000/posts", {
+      await fetch("/posts", {
         method: "POST",
         body: data,
       })

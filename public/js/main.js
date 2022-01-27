@@ -12,7 +12,7 @@ const initApp = async () => {
 };
 
 const getPosts = async () => {
-  return await (await fetch("http://localhost:3000/posts")).json();
+  return await (await fetch("/posts")).json();
 };
 
 const postsDOM = (posts) => {
@@ -41,7 +41,7 @@ callForm.addEventListener("submit", async (e) => {
   const phone = callForm.phone.value;
   try {
     await (
-      await fetch("http://localhost:3000/call-requests", {
+      await fetch("/call-requests", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ contactForm.addEventListener("submit", async (e) => {
 
   try {
     await (
-      await fetch("http://localhost:3000/emails", {
+      await fetch("/emails", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

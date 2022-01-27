@@ -11,9 +11,7 @@
       updateBtn.click();
 
       id = e.target.parentNode.parentNode.querySelector(".id").value;
-      const postInfo = await (
-        await fetch(`http://localhost:3000/posts/${id}`)
-      ).json();
+      const postInfo = await (await fetch(`/posts/${id}`)).json();
       title.value = postInfo.title;
       text.value = postInfo.text;
     }
@@ -28,7 +26,7 @@
 
     try {
       await (
-        await fetch(`http://localhost:3000/posts/${id}`, {
+        await fetch(`/posts/${id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
