@@ -16,6 +16,6 @@ Travelling related website using Node JS
 
 > Mongoose
 
-> Other Packages: multer, bcrypt, ejs, date-fns, jwt, cookie-parser
+> Other Packages: multer, bcrypt, ejs, uniqid, date-fns, jwt, cookie-parser
 
 > Here developers' Map

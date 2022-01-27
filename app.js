@@ -11,7 +11,10 @@ const cookieParser = require("cookie-parser");
 const auth = require("./controllers/auth");
 const formatDate = require("date-fns/formatDistanceToNow");
 
-mongoose.connect("mongodb://localhost/travels");
+// mongoose.connect("mongodb://localhost/travels");
+mongoose.connect(
+  "mongodb+srv://ikram:ikramtariq24@mycluster.otksj.mongodb.net/travels"
+);
 app.use(express.json());
 app.set("view engine", "ejs");
 
