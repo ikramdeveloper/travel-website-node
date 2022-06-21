@@ -1,7 +1,9 @@
+require("dotenv").config();
+
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const multer = require("multer");
+
 const postsRouter = require("./routes/posts.route");
 const callRequestsRouter = require("./routes/call-request.route");
 const emailsRouter = require("./routes/email.route");
@@ -11,10 +13,9 @@ const cookieParser = require("cookie-parser");
 const auth = require("./controllers/auth");
 const formatDate = require("date-fns/formatDistanceToNow");
 
-// mongoose.connect("mongodb://localhost/travels");
-mongoose.connect(
-  "mongodb+srv://ryan:ryan1981@mycluster.otksj.mongodb.net/travels"
-);
+const app = express();
+const PORT = process.env.PORT || 8000;
+
 app.use(express.json());
 app.set("view engine", "ejs");
 
@@ -60,6 +61,11 @@ app.get("/login", (req, resp) => {
   }
 });
 
-let port = process.env.PORT || 3000;
-
-app.listen(port, () => console.log(`listening ${port}...`));
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () =>
+      console.log(`connected to db & listening on port ${PORT}...`)
+    );
+  })
+  .catch((err) => console.log(err));

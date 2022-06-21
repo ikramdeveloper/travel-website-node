@@ -1,6 +1,6 @@
 # Travel Website
 
-Travelling related website using Node JS
+# Traveling related website using Node JS
 
 ### Technologies:
 
@@ -18,4 +18,4 @@ Travelling related website using Node JS
 
 > Other Packages: multer, bcrypt, ejs, uniqid, date-fns, jwt, cookie-parser
 
-> Here developers' Map
+> Here developers' Ma
